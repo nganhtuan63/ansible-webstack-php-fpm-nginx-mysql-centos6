@@ -4,4 +4,4 @@
   # remote_user: user
   # sudo: yes
   roles:
-  - redis
+  - rabbitmq

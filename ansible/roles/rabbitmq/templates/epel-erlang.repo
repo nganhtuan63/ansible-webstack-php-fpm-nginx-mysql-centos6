@@ -1,0 +1,13 @@
+[epel-erlang]
+name=Erlang/OTP R14B
+baseurl=http://repos.fedorapeople.org/repos/peter/erlang/epel-$releasever/$basearch/
+enabled=1
+skip_if_unavailable=1
+gpgcheck=0
+
+[epel-erlang-source]
+name=Erlang/OTP R14B - Source
+baseurl=http://repos.fedorapeople.org/repos/peter/erlang/epel-$releasever/SRPMS
+enabled=0
+skip_if_unavailable=1
+gpgcheck=0

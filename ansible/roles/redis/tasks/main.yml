@@ -15,7 +15,7 @@
 - name: go to folder phpredis and unzip
   command: chdir=/tmp/phpredis unzip master.zip
 
-- name: Go to extracted folder
+- name: Do Phpize Redis
   command: chdir=/tmp/phpredis/phpredis-master phpize
 
 - name: Configure
@@ -27,5 +27,5 @@
 - name: Make Install The Redis
   command: chdir=/tmp/phpredis/phpredis-master make install
 
-- name: Add redis.so to 
+- name: Add redis.so to php modules
   command: echo "extension=redis.so" > /etc/php.d/phpredis.ini

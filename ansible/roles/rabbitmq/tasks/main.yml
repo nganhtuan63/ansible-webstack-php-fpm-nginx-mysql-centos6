@@ -1,0 +1,14 @@
+---
+- name: Add Repo for RabbitMQ
+  template: src=epel-erlang.repo dest=/etc/yum.repos.d/epel-erlang.repo
+
+- name: RPM Import
+  copy: src=rabbitmq-signing-key-public.asc dest=/etc/pki/rpm-gpg
+
+- name: Install 
+  yum: name=rabbitmq-server-3.2.3-1.noarch.rpm state=latest
+  notify: start rabbitmq
+
+- name: Add Auto Start
+  command: chkconfig rabbitmq-server on
+
