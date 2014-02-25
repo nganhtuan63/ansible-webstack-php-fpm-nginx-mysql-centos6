@@ -1,0 +1,22 @@
+---
+- name: Copy Ngixn Repo
+  template: src=nginx.repo.j2 dest=/etc/yum.repos.d/nginx.repo
+
+- name: Install Nginx
+  yum: name=nginx state=latest
+
+- name: Add nginx to chkconfig
+  command: chkconfig --add nginx
+
+- name: Copy nginx default configuration
+  template: src=default.conf.j2 dest=/etc/nginx/conf.d/default.conf
+
+- name: Copy front cms default configuration
+  template: src=frontcms.conf.j2 dest=/etc/nginx/conf.d/frontcms.conf
+
+- name: Copy backend cms default configuration
+  template: src=backendcms.conf.j2 dest=/etc/nginx/conf.d/backendcms.conf
+
+- name: Auto start nginx
+  command: chkconfig --levels 235 nginx on
+  notify: restart nginx

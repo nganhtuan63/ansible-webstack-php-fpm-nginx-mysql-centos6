@@ -1,0 +1,9 @@
+---
+- hosts: vagrant
+  sudo: yes
+  # remote_user: user
+  # sudo: yes
+
+  roles:
+    - common
+    - nginx

@@ -1,0 +1,25 @@
+---
+- name: Install libselinux-python
+  yum: name=libselinux-python state=present
+
+- name: Copy the EPEL repository definition
+  copy: src=epel.repo dest=/etc/yum.repos.d/epel.repo
+
+- name: Create the GPG key for EPEL
+  copy: src=RPM-GPG-KEY-EPEL-6 dest=/etc/pki/rpm-gpg
+
+- name: get epel-repo rpm RHEL6
+  get_url: dest=/tmp/epel-release.rpm  url=http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+
+- name: get remi rpm RHEL6
+  get_url: dest=/tmp/remi-release.rpm  url=http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+
+- name: install epel-repo rpm
+  yum: pkg=/tmp/epel-release.rpm state=installed
+
+- name: install remi
+  yum: pkg=/tmp/remi-release.rpm state=installed
+
+- name: Set up iptables rules
+  copy: src=iptables-save dest=/etc/sysconfig/iptables
+  notify: restart iptables

@@ -1,0 +1,22 @@
+---
+# You shouldn't need to change this.
+mysql_port: 3306
+
+# MySQL Root Pass
+mysql_root_db_pass: root123
+
+# This is used for the nginx server configuration, but # access to the
+# Wordpress site is not restricted by a # named host.
+server_hostname: www.example.com
+
+# Folder of Source CMS
+cms_folder: tt
+
+# Default Domain for Remote Machine
+default_domain: mdev.com
+
+# Default Front Domain for CMS
+front_cms_domain: front.ttdev.com
+
+# Default Backend Domain for CMS
+backend_cms_domain: backend.ttdev.com
