@@ -1,0 +1,12 @@
+---
+- name: Create new Swap
+  command: dd if=/dev/zero of=/swapfile bs=1024 count=512k
+
+- name: Create Swap Area
+  command: mkswap /swapfile
+
+- name: Actice Swap On
+  command: swapon /swapfile
+
+- name: Copy nginx default configuration
+  command: echo '/swapfile          swap            swap    defaults        0 0' >> /etc/fstab

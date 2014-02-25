@@ -17,8 +17,10 @@ server {
         location ~ \.php$ {
                 try_files $uri =404;                
                 fastcgi_index index.php;
-                fastcgi_pass  unix:/var/run/php-fpm/www.sock;                
+                fastcgi_pass  127.0.0.1:9000;                
                 include       fastcgi_params;
+                fastcgi_param   SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+                fastcgi_param   SCRIPT_NAME        $fastcgi_script_name;
         }
         
         location ~ /\.ht {
