@@ -102,5 +102,7 @@ III. Ansible Configuration
 
   	chmod -x path_to/ansible/hosts
 
+  	3. If you have run swap module, remember to comment # it if you need to do other provison module later
+
 
 

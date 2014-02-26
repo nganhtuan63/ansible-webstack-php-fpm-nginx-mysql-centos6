@@ -28,4 +28,4 @@
   command: chdir=/tmp/phpredis/phpredis-master make install
 
 - name: Add redis.so to php modules
-  lineinfile: dest=/etc/php.d/phpredis.ini regexp='' insertafter=EOF line='extension=redis.so'  
+  copy: src=phpredis.ini dest=/etc/php.d/phpredis.ini 
