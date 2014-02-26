@@ -23,3 +23,6 @@
 - name: Set up iptables rules
   copy: src=iptables-save dest=/etc/sysconfig/iptables
   notify: restart iptables
+
+- name: Install wget
+  yum: name=wget state=present

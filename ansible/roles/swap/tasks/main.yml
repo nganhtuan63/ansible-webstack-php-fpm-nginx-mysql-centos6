@@ -8,5 +8,5 @@
 - name: Actice Swap On
   command: swapon /swapfile
 
-- name: Copy nginx default configuration
-  command: echo '/swapfile          swap            swap    defaults        0 0' >> /etc/fstab
+- name: Add to Fstab for active when starting OS
+  lineinfile: dest=/etc/fstab regexp='' insertafter=EOF line='/swapfile          swap            swap    defaults        0 0'

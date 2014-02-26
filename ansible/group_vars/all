@@ -20,3 +20,6 @@ front_cms_domain: front.ttdev.com
 
 # Default Backend Domain for CMS
 backend_cms_domain: backend.ttdev.com
+
+# RabbitMQ Link
+rabbitmq: https://www.rabbitmq.com/releases/rabbitmq-server/v3.2.3/rabbitmq-server-3.2.3-1.noarch.rpm
