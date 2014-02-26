@@ -105,4 +105,15 @@ III. Ansible Configuration
   	3. If you have run swap module, remember to comment # it if you need to do other provison module later
 
 
+ IV. Setup Local Domain
+
+ 	1. Modify your host files for 
+
+ 		sudo vi /etc/hosts
+
+ 	2. Add the new record (IP)
+
+ 		192.168.33.35 mdev.com
+
+
 
