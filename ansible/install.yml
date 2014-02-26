@@ -4,4 +4,13 @@
   # remote_user: user
   # sudo: yes
   roles:
+  - common
+  - swap
+  - mysql
+  - nginx
+  - php-fpm-55
+  - composer
+  - redis
+  - gearman
+  - rabbitmq
   - varnish
