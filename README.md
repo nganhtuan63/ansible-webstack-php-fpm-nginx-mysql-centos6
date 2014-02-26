@@ -94,5 +94,13 @@ III. Ansible Configuration
   	end
 
 
+  	2. Note: If you encounter this error
+
+  	ERROR: problem running path_to/ansible/hosts --list ([Errno 8] Exec format error)
+
+  	do this: 
+
+  	chmod -x path_to/ansible/hosts
+
 
 
