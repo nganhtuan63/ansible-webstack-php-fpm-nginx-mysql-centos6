@@ -13,16 +13,16 @@
     - php-mcrypt
 
 - name: Create Folder for Session
-  file: path=/var/lib/php/session state=directory owner=nginx group=nginx mode=644
+  file: path=/var/lib/php/session state=directory owner=nginx group=nobody mode=770
 
 - name: Create Folder for WDSL
-  file: path=/var/lib/php/wsdlcache state=directory owner=nginx group=nginx mode=644
+  file: path=/var/lib/php/wsdlcache state=directory owner=nginx group=nobody mode=770
 
 - name: Copy error.log file
-  copy: src=error.log dest=/var/log/php-fpm/error.log owner=nginx group=nginx mode=644
+  copy: src=error.log dest=/var/log/php-fpm/error.log owner=nginx group=nginx mode=770
 
 - name: Copy slow.log file
-  copy: src=slow.log dest=/var/log/php-fpm/slow.log owner=nginx group=nginx mode=644
+  copy: src=slow.log dest=/var/log/php-fpm/slow.log owner=nginx group=nginx mode=770
 
 - name: Copy www.conf file
   template: src=www.conf dest=/etc/php-fpm.d/www.conf
