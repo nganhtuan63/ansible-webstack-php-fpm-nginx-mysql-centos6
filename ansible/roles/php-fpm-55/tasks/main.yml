@@ -13,10 +13,10 @@
     - php-mcrypt
 
 - name: Create Folder for Session
-  command: mkdir /var/lib/php/session creates=/var/lib/php/session
+  file: path=/var/lib/php/session state=directory owner=nginx group=nginx mode=644
 
 - name: Create Folder for WDSL
-  command: mkdir /var/lib/php/wsdlcache creates=/var/lib/php/wsdlcache
+  file: path=/var/lib/php/wsdlcache state=directory owner=nginx group=nginx mode=644
 
 - name: Copy error.log file
   copy: src=error.log dest=/var/log/php-fpm/error.log owner=nginx group=nginx mode=644
