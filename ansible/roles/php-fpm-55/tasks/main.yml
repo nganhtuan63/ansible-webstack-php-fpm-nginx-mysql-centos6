@@ -12,6 +12,18 @@
     - php-mbstring
     - php-mcrypt
 
+- name: Create Folder for Session
+  command: mkdir /var/lib/php/session creates=/var/lib/php/session
+
+- name: Create Folder for WDSL
+  command: mkdir /var/lib/php/wsdlcache creates=/var/lib/php/wsdlcache
+
+- name: Copy error.log file
+  copy: src=error.log dest=/var/log/php-fpm/error.log owner=nginx group=nginx mode=644
+
+- name: Copy slow.log file
+  copy: src=slow.log dest=/var/log/php-fpm/slow.log owner=nginx group=nginx mode=644
+
 - name: Copy www.conf file
   template: src=www.conf dest=/etc/php-fpm.d/www.conf
 
