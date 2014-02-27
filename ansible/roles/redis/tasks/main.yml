@@ -7,7 +7,7 @@
   notify: restart redis
 
 - name: create phpredis client folder
-  command: mkdir /tmp/phpredis
+  command: mkdir /tmp/phpredis force=no  creates=/tmp/phpredis
 
 - name: download latest stable phpredis client
   get_url: url=https://github.com/nicolasff/phpredis/archive/master.zip dest=/tmp/phpredis/master.zip
@@ -28,4 +28,4 @@
   command: chdir=/tmp/phpredis/phpredis-master make install
 
 - name: Add redis.so to php modules
-  copy: src=phpredis.ini dest=/etc/php.d/phpredis.ini 
+  copy: src=phpredis.ini dest=/etc/php.d/phpredis.ini force=yes

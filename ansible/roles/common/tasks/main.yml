@@ -26,3 +26,6 @@
 
 - name: Install wget
   yum: name=wget state=present
+
+- name: Install gcc
+  yum: name=gcc state=present

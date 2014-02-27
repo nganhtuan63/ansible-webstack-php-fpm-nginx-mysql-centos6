@@ -1,12 +1,12 @@
 ---
 - name: Create new Swap
-  command: dd if=/dev/zero of=/swapfile bs=1024 count=512k
+  command: dd if=/dev/zero of=/{{ swapfile_name }} bs=1024 count=512k creates=/{{ swapfile_name }}
 
 - name: Create Swap Area
-  command: mkswap /swapfile
+  command: mkswap /{{ swapfile_name }} creates=/{{ swapfile_name }}
 
 - name: Actice Swap On
-  command: swapon /swapfile
+  command: swapon /{{ swapfile_name }} creates=/{{ swapfile_name }}
 
 - name: Add to Fstab for active when starting OS
-  lineinfile: dest=/etc/fstab regexp='' insertafter=EOF line='/swapfile          swap            swap    defaults        0 0'
+  lineinfile: dest=/etc/fstab regexp='' insertafter=EOF line='/{{ swapfile_name }}          swap            swap    defaults        0 0' 

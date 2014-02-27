@@ -10,6 +10,10 @@
     - libevent 
     - libevent-devel
     - gperf
+    - boost   
+    - boost-static
+    - boost    
+    - gcc-c++ 
 
 - name: Get the Latest Gearman Job Server
   get_url: url=https://launchpad.net/gearmand/1.2/1.1.12/+download/gearmand-1.1.12.tar.gz dest=/tmp/

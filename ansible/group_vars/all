@@ -1,4 +1,17 @@
 ---
+# Username
+
+username: vagrant
+
+# Swap Define
+swapfile_name: swapfile
+
+# Swap Size
+swap_size: 512k
+
+# Swap Read Write At a Moment
+swap_bs: 1024
+
 # You shouldn't need to change this.
 mysql_port: 3306
 
