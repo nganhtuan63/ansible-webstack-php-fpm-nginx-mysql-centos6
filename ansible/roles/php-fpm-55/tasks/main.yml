@@ -11,6 +11,7 @@
     - php-xml
     - php-mbstring
     - php-mcrypt
+    - php-mysql
 
 - name: Create Folder for Session
   file: path=/var/lib/php/session state=directory owner=nginx group=nobody mode=770
