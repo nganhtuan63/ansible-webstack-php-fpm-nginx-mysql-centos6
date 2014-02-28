@@ -5,7 +5,11 @@ user=mysql
 # Disabling symbolic-links is recommended to prevent assorted security risks
 symbolic-links=0
 port={{ mysql_port }}
+default_character_set=utf8
 
 [mysqld_safe]
 log-error=/var/log/mysqld.log
 pid-file=/var/run/mysqld/mysqld.pid
+
+[client]
+default_character_set=utf8
